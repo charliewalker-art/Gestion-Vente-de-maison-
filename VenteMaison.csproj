@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{079B8642-8ED8-4E05-BFCF-0D1056C01134}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>VenteMaison</RootNamespace>
+    <AssemblyName>VenteMaison</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=9.1.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector NET 9.1\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connexion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Connexion.Designer.cs">
+      <DependentUpon>Connexion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Datagrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Datagrid.Designer.cs">
+      <DependentUpon>Datagrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maison\AjouterMaison.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maison\AjouterMaison.Designer.cs">
+      <DependentUpon>AjouterMaison.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maison\ModifierMaison.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maison\ModifierMaison.Designer.cs">
+      <DependentUpon>ModifierMaison.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stat.Designer.cs">
+      <DependentUpon>Stat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Style.cs" />
+    <Compile Include="User\AjouterUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\AjouterUser.Designer.cs">
+      <DependentUpon>AjouterUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Maison.cs" />
+    <Compile Include="Maison\MaisonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maison\MaisonForm.Designer.cs">
+      <DependentUpon>MaisonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Paiment\AjouterPaiment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paiment\AjouterPaiment.Designer.cs">
+      <DependentUpon>AjouterPaiment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contrat\AjouterContrat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contrat\AjouterContrat.Designer.cs">
+      <DependentUpon>AjouterContrat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Contrat.cs" />
+    <Compile Include="Contrat\ContratForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contrat\ContratForm.Designer.cs">
+      <DependentUpon>ContratForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contrat\ContratModifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contrat\ContratModifier.Designer.cs">
+      <DependentUpon>ContratModifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Agent.cs" />
+    <Compile Include="agent\AgentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="agent\AgentForm.Designer.cs">
+      <DependentUpon>AgentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="agent\AjouterAgent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="agent\AjouterAgent.Designer.cs">
+      <DependentUpon>AjouterAgent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Client.cs" />
+    <Compile Include="client\ClientAjouter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="client\ClientAjouter.Designer.cs">
+      <DependentUpon>ClientAjouter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="client\ClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="client\ClientForm.Designer.cs">
+      <DependentUpon>ClientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Config\Configuration.cs" />
+    <Compile Include="Model\Database.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="client\Modifier_client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="client\Modifier_client.Designer.cs">
+      <DependentUpon>Modifier_client.cs</DependentUpon>
+    </Compile>
+    <Compile Include="agent\ModifierAgent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="agent\ModifierAgent.Designer.cs">
+      <DependentUpon>ModifierAgent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Paiment.cs" />
+    <Compile Include="Paiment\PaimentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paiment\PaimentForm.Designer.cs">
+      <DependentUpon>PaimentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Model\Table.cs" />
+    <Compile Include="Model\Vente.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="User\UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vente\VenteAjouter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vente\VenteAjouter.Designer.cs">
+      <DependentUpon>VenteAjouter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vente\VenteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vente\VenteForm.Designer.cs">
+      <DependentUpon>VenteForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="agent\AgentForm.resx">
+      <DependentUpon>AgentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="agent\AjouterAgent.resx">
+      <DependentUpon>AjouterAgent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Connexion.resx">
+      <DependentUpon>Connexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Datagrid.resx">
+      <DependentUpon>Datagrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maison\AjouterMaison.resx">
+      <DependentUpon>AjouterMaison.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maison\ModifierMaison.resx">
+      <DependentUpon>ModifierMaison.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stat.resx">
+      <DependentUpon>Stat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\AjouterUser.resx">
+      <DependentUpon>AjouterUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maison\MaisonForm.resx">
+      <DependentUpon>MaisonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paiment\AjouterPaiment.resx">
+      <DependentUpon>AjouterPaiment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contrat\AjouterContrat.resx">
+      <DependentUpon>AjouterContrat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="client\ClientForm.resx">
+      <DependentUpon>ClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="client\ClientAjouter.resx">
+      <DependentUpon>ClientAjouter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contrat\ContratForm.resx">
+      <DependentUpon>ContratForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contrat\ContratModifier.resx">
+      <DependentUpon>ContratModifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="client\Modifier_client.resx">
+      <DependentUpon>Modifier_client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="agent\ModifierAgent.resx">
+      <DependentUpon>ModifierAgent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paiment\PaimentForm.resx">
+      <DependentUpon>PaimentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="User\UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vente\VenteAjouter.resx">
+      <DependentUpon>VenteAjouter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vente\VenteForm.resx">
+      <DependentUpon>VenteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
